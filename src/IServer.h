@@ -6,8 +6,9 @@
 #include <sys/types.h> /* getaddrinfo()*/
 #include <netdb.h>
 #include <memory.h> /* memset(...) */
+const int MAX_BUFFER_SIZE = 520028;
 
-class Server
+class IServer
 {
 public:
     // virtual void summaryStatistics() = 0;

@@ -1,12 +1,17 @@
-#include "Server.h"
+#pragma once
+#include "IServer.h"
+#include <iostream>
 
-class UDPServer : public Server
+class UDPServer : public IServer
 {
 private:
     int fdsock = -1;
     int errVal = -1;
+    int bindVal = -1;
     struct addrinfo *servAddr;
-    struct addrinfo addrCriteria; // Criteria for address
+    struct sockaddr_storage fromAddr;
+    int rc = -1;
+    char *buffer;
 
 public:
     /*
