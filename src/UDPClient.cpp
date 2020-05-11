@@ -19,5 +19,5 @@ void UDPClient::sendMessage(void *message)
 {
     Txbuffer = (char *)message;
     rc = sendto(fdsock, message, sizeof(message), 0, servAddr->ai_addr, servAddr->ai_addrlen);
-    std::cout << rc << std::endl;
+    std::cout << "Message sent\n";
 }

@@ -7,10 +7,8 @@ void UDPServer::launchServer()
     {
         socklen_t fromAddrlen = sizeof(fromAddr);
         rc = recvfrom(fdsock, buffer, MAX_BUFFER_SIZE, 0, (struct sockaddr *)&fromAddr, &fromAddrlen);
-        std::cout << "From user ";
         struct sockaddr_in messAddr = *(struct sockaddr_in *)&fromAddr;
-        std::cout << inet_ntoa(messAddr.sin_addr);
-        std::cout << ": " << buffer << "\n";
+        std::cout << "From user " << inet_ntoa(messAddr.sin_addr) << ": " << buffer << "\n";
     }
 }
 
